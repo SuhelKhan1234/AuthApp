@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -15,6 +15,6 @@ const user = require("./routes/user");
 app.use("/api/v1", user);
 
 // Activate
-app.listen(PORT,  () => {
-    console.log(`App is listening at ${PORT}`);
+app.listen(PORT, "127.0.0.1", () => {
+    console.log(`App is listening at http://127.0.0.1:${PORT}`);
 });
