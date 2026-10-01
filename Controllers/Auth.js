@@ -69,7 +69,7 @@ exports.login = async(req, res)  => {
             
         }
            //check for registered User
-        let user = await User.findOne ({email});
+        let user = await User.findOne({email});
     // if not a registered user
         if(!user){
             return res.status(401).json({
@@ -109,6 +109,13 @@ exports.login = async(req, res)  => {
                 user,
                 message:'User Logged in successfully',
             });
+
+            //    res.status(200).json({
+            //     success:true,
+            //     token,
+            //     user,
+            //     message:'User Logged in successfully',
+            // });
            
 
         }
